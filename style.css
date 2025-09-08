@@ -1,0 +1,355 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #0c0c0c;
+  color: white;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Start Screen */
+#playGame {
+  text-align: center;
+  padding: 1rem;
+}
+
+#playGame h1 {
+  text-align: center;
+  font-size: clamp(2rem, 8vw, 5.5rem); /* Responsive font size */
+  margin-bottom: 1.5rem;
+  animation: colorChange 3s infinite;
+  line-height: 1.2; /* Better line height for mobile */
+}
+
+@keyframes colorChange {
+  0% {
+    color: red;
+  }
+
+  25% {
+    color: blue;
+  }
+
+  50% {
+    color: green;
+  }
+
+  75% {
+    color: orange;
+  }
+
+  100% {
+    color: red;
+  }
+}
+
+#playGame button {
+  background-color: rgb(5, 10, 117);
+  border: none;
+  padding: clamp(0.8rem, 3vw, 1rem) clamp(1.5rem, 5vw, 2rem); /* Responsive padding */
+  border-radius: 50px;
+  cursor: pointer;
+  min-height: 44px; /* Touch-friendly minimum size */
+  min-width: 120px; /* Minimum width for touch */
+}
+
+#playGame button a {
+  text-decoration: none;
+  font-size: clamp(1rem, 4vw, 1.5rem); /* Responsive font size */
+  animation: Change 1s infinite;
+}
+
+@keyframes Change {
+  0% {
+    color: rgb(5, 10, 117);
+  }
+  50% {
+    color: orange;
+    opacity: 1;
+  }
+  100% {
+    color: rgb(5, 10, 117);
+  }
+}
+
+/* Main Container */
+.container {
+  background: #1b1b1b;
+  padding: clamp(1rem, 4vw, 2rem); /* Responsive padding */
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  max-width: 600px;
+  width: 100%; /* Full width on mobile */
+  margin: auto;
+  display: none;
+}
+
+/* Heading */
+.heading {
+  font-size: clamp(1.5rem, 6vw, 2.5rem); /* Responsive heading */
+  margin-bottom: clamp(1rem, 4vw, 2rem); /* Responsive margin */
+}
+
+/* Weapon Section */
+.weapons-div {
+  margin-bottom: clamp(1rem, 4vw, 2rem); /* Responsive margin */
+}
+
+.weapons-div h2 {
+  font-size: clamp(1rem, 4vw, 1.5rem); /* Responsive subheading */
+  margin-bottom: 1rem;
+}
+
+.weapons-img {
+  display: flex;
+  justify-content: center;
+  gap: clamp(0.5rem, 3vw, 2rem); /* Responsive gap */
+  margin-top: 1rem;
+  flex-wrap: wrap; /* Allow wrapping on very small screens */
+}
+
+.wepons-card {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s;
+  padding: clamp(0.5rem, 2vw, 1rem); /* Responsive padding */
+  border-radius: 10px;
+  min-width: 80px; /* Minimum touch target */
+  flex: 1; /* Equal width distribution */
+  max-width: 120px; /* Maximum width */
+}
+
+.wepons-card:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.wepons-card img {
+  width: clamp(60px, 15vw, 80px) !important; /* Responsive image size */
+  height: auto;
+}
+
+.wepons-card p {
+  font-size: clamp(0.8rem, 3vw, 1rem); /* Responsive text */
+  margin-top: 0.5rem;
+}
+
+/* Battle Screen */
+#battle-screen {
+  margin-top: clamp(1rem, 4vw, 2rem); /* Responsive margin */
+  text-align: center;
+  display: none;
+}
+
+#battle-screen h2 {
+  font-size: clamp(1rem, 4vw, 1.5rem); /* Responsive font */
+  margin-bottom: 1rem;
+}
+
+.battle-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(1rem, 6vw, 3rem); /* Responsive gap */
+  margin: clamp(1rem, 4vw, 2rem) 0;
+  flex-wrap: wrap; /* Allow wrapping on very small screens */
+}
+
+#player-hand,
+#computer-hand {
+  width: clamp(80px, 20vw, 120px) !important; /* Responsive battle images */
+  height: auto;
+}
+
+#player-hand {
+  transform: scaleX(1);
+}
+
+.shake-player {
+  animation: shake-player 0.5s ease-in-out 2;
+}
+
+#computer-hand {
+  transform: scaleX(-1);
+}
+
+.shake-computer {
+  animation: shake-computer 0.5s ease-in-out 2;
+}
+
+/* Keyframes for player hand (up-down) */
+@keyframes shake-player {
+  0%,
+  100% {
+    transform: scaleX(1) translateY(0);
+  }
+  25% {
+    transform: scaleX(1) translateY(-20px);
+  }
+  50% {
+    transform: scaleX(1) translateY(20px);
+  }
+  75% {
+    transform: scaleX(1) translateY(-10px);
+  }
+}
+
+/* Keyframes for computer hand (up-down) */
+@keyframes shake-computer {
+  0%,
+  100% {
+    transform: scaleX(-1) translateY(0);
+  }
+  25% {
+    transform: scaleX(-1) translateY(-20px);
+  }
+  50% {
+    transform: scaleX(-1) translateY(20px);
+  }
+  75% {
+    transform: scaleX(-1) translateY(-10px);
+  }
+}
+
+#resultAnauncement {
+  font-size: clamp(1rem, 5vw, 1.5rem) !important; /* Responsive result text */
+  margin: 1rem 0;
+}
+
+.score {
+  display: flex;
+  justify-content: center;
+  gap: clamp(0.5rem, 4vw, 2rem); /* Responsive gap */
+  font-size: clamp(0.8rem, 3vw, 1.2rem); /* Responsive font */
+  flex-wrap: wrap; /* Allow wrapping */
+  margin: 1rem 0;
+}
+
+.score h3 {
+  white-space: nowrap; /* Prevent text wrapping within score items */
+}
+
+/* Buttons */
+#playAgain-Btn {
+  margin-top: clamp(1rem, 4vw, 2.5rem); /* Responsive margin */
+  text-align: center;
+}
+
+#playAgain {
+  width: clamp(8rem, 40vw, 12rem); /* Responsive button width */
+  font-size: clamp(0.9rem, 3vw, 1.5rem); /* Responsive font */
+  padding: clamp(0.8rem, 3vw, 1rem); /* Responsive padding */
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(9, 25, 190);
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  min-height: 44px; /* Touch-friendly size */
+}
+
+#Quit-button {
+  margin-top: clamp(1rem, 4vw, 2.5rem); /* Responsive margin */
+  display: flex;
+  justify-content: center;
+}
+
+#Quit-button button {
+  width: clamp(8rem, 40vw, 12rem); /* Responsive button width */
+  font-size: clamp(0.9rem, 3vw, 1.5rem); /* Responsive font */
+  padding: clamp(0.8rem, 3vw, 1rem); /* Responsive padding */
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(9, 25, 190);
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  min-height: 44px; /* Touch-friendly size */
+}
+
+#Quit-button button:hover,
+#playAgain:hover {
+  background-color: crimson;
+}
+
+/* Media queries for specific breakpoints */
+/* Small phones */
+@media (max-width: 480px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  .container {
+    border-radius: 15px;
+  }
+
+  .weapons-img {
+    gap: 0.5rem;
+  }
+
+  .battle-area {
+    gap: 1rem;
+  }
+
+  .score {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+}
+
+/* Medium phones and small tablets */
+@media (max-width: 768px) and (orientation: landscape) {
+  #playGame h1 {
+    font-size: clamp(1.5rem, 6vw, 3rem);
+  }
+
+  .container {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .battle-area {
+    margin: 1rem 0;
+  }
+}
+
+/* Large tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    max-width: 700px;
+  }
+
+  .weapons-img {
+    gap: 3rem;
+  }
+}
+
+/* Ensure touch targets are accessible */
+@media (hover: none) and (pointer: coarse) {
+  .wepons-card {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .wepons-card:hover {
+    transform: none;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .wepons-card:active {
+    transform: scale(0.95);
+    background: rgba(255, 255, 255, 0.2);
+  }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Start Screen -->
+  <div id="playGame">
+    <h1>You want to play Game</h1>
+    <button><a id="link" href="#">Click Here</a></button>
+  </div>
+
+  <!-- Main Game -->
+  <div class="mainDiv">
+    <div class="container">
+
+      <!-- Heading -->
+      <h1 class="heading">Rock Paper Scissor</h1>
+
+      <!-- Weapon Selection -->
+      <div class="weapons-div">
+        <h2>Select your Weapon</h2>
+        <div class="weapons-img">
+          <div class="wepons-card">
+            <img src="images/Rock.png" alt="Rock" data-choice="Rock" width="80px">
+            <p>Rock</p>
+          </div>
+          <div class="wepons-card">
+            <img src="images/Paper.png" alt="Paper" data-choice="Paper" width="80px">
+            <p>Paper</p>
+          </div>
+          <div class="wepons-card">
+            <img src="images/Scissor.png" alt="Scissor" data-choice="Scissor" width="80px">
+            <p>Scissor</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Battle Screen -->
+      <div id="battle-screen">
+        <h2>Player <span>v/s</span> Computer</h2>
+        <div class="battle-area">
+          <img id="player-hand" src="images/Rock.png" alt="Player hand" width="120">
+          <img id="computer-hand" src="images/Rock.png" alt="Computer hand" width="120">
+        </div>
+        <h1 id="resultAnauncement" style="color: rgb(8, 194, 211);"></h1>
+        <div id="playAgain-Btn">
+        <button id="playAgain">Play Again</button>
+      </div>
+      </div>
+
+       <!-- Scoreboard -->
+        <div class="score">
+          <h3>Won: <span id="won">0</span></h3>
+          <h3>Lost: <span id="lost">0</span></h3>
+          <h3>Draw: <span id="draw">0</span></h3>
+        </div>
+
+      <!-- Quit Button -->
+      <div id="Quit-button">
+        <button id="quitBtn">Quit Game</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
